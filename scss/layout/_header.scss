@@ -1,0 +1,294 @@
+@use "../abstraction";
+.header-top {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // @include abstraction.screen(lg) {
+    //     display: none;
+    // }
+    &__icon {
+        width: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    &__text {
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+}
+.header-options {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    &__item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        position: relative;
+        .flag {
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+            object-fit: cover;
+        }
+    }
+    .more-currency {
+        background: var(--white);
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        position: absolute;
+        top: 30px;
+        display: none;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: transparent;
+            position: absolute;
+            top: -27px;
+            left: 0;
+        }
+    }
+    &__item:hover .more-currency {
+        display: block;
+    }
+    .more-country {
+        display: flex;
+        align-items: center;
+        background: var(--white);
+        width: 100px;
+        height: 40px;
+        line-height: 30px;
+        text-align: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        position: absolute;
+        top: 25px;
+        left: 0;
+        padding: 8px;
+        display: none;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: transparent;
+            position: absolute;
+            top: -27px;
+            left: 0;
+        }
+    }
+    &__item:hover .more-country {
+        display: inline-flex;
+    }
+    .header-authen {
+        position: absolute;
+        background: var(--white);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 100px;
+        top: 30px;
+        display: none;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background: transparent;
+            position: absolute;
+            top: -27px;
+            left: 0;
+        }
+        &__item {
+            padding: 8px 12px;
+        }
+        &__link {
+            display: inline-block;
+            width: 100%;
+
+            &:hover {
+                color: var(--primary-color);
+                font-weight: bold;
+            }
+        }
+    }
+    &__item:hover .header-authen {
+        display: block;
+    }
+}
+.speparate {
+    border: 1px solid #e9e7e7;
+}
+
+.header-center {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar {
+    @include abstraction.screen(lg) {
+        position: fixed;
+        background: var(--white);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        z-index: 99;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 65%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transform: translateX(-101%);
+        transition: transform 0.5s;
+        &.show {
+            transform: translateX(0%);
+        }
+        &.show ~ &__overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__overlay {
+        @include abstraction.screen(lg) {
+            position: fixed;
+            z-index: 1;
+            inset: 0;
+            background-color: rgba($color: #000000, $alpha: 0.4);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        @include abstraction.screen(lg) {
+            flex-direction: column;
+        }
+    }
+    &__item {
+        &:hover .submenu {
+            visibility: visible;
+        }
+        @include abstraction.screen(lg) {
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid #8c8b8b;
+            padding-bottom: 12px;
+        }
+    }
+
+    &__link {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        &:hover {
+            color: var(--primary-color);
+            font-weight: 500;
+            filter: var(--filter-icon);
+        }
+        &--active {
+            color: var(--primary-color);
+            filter: var(--filter-icon);
+
+            font-weight: 500;
+        }
+        @include abstraction.screen(lg) {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+.header-cart {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    &__group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__icon {
+        width: 27px;
+    }
+}
+.header-bottom {
+    background: var(--primary-color);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+}
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 330px;
+    &__icon {
+        width: 25px;
+        filter: var(--filter-icon-bar);
+    }
+    &__text {
+        font-weight: 500;
+        color: var(--white);
+    }
+}
+.header-search {
+    flex: 1;
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        background: var(--white);
+        padding: 0 20px;
+        height: 52px;
+        border-radius: 20px;
+    }
+    &__input {
+        padding-left: 10px;
+        width: 100%;
+        height: 100%;
+        &::placeholder {
+            color: var(--color-place);
+            font-size: 1.6rem;
+        }
+    }
+    &__submit {
+        width: 25px;
+        filter: var(--filter-submit-header);
+        cursor: pointer;
+    }
+}
+.header-contact {
+    display: flex;
+    gap: 12px;
+    width: 300px;
+    justify-content: flex-end;
+    &__phone {
+        width: 30px;
+        filter: var(--filter-phone-icon);
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        color: var(--white);
+        gap: 6px;
+    }
+    &__number {
+        font-weight: 500;
+    }
+}
+.header__more {
+    width: 30px;
+    filter: var(--filter-submit-header);
+}
