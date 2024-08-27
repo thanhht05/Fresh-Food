@@ -1,0 +1,8 @@
+@use "../abstraction";
+.logo{
+    &__img{
+        @include abstraction.screen(sm){
+            max-width: 100px;
+        }
+    }
+}

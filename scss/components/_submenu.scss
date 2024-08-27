@@ -6,7 +6,8 @@
     top: 54px;
     width: 724px;
     padding: 20px;
-    visibility: hidden;
+    // visibility: hidden;
+    display: none;
     z-index: 1;
     @include abstraction.screen(lg) {
         top: 118px;

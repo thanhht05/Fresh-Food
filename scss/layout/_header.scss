@@ -1,9 +1,12 @@
 @use "../abstraction";
-.header-top {
-    padding: 10px 0;
+%flexCenter {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.header-top {
+    padding: 10px 0;
+    @extend %flexCenter;
     // @include abstraction.screen(lg) {
     //     display: none;
     // }
@@ -126,11 +129,27 @@
 
 .header-center {
     padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @extend %flexCenter;
 }
 .navbar {
+    &__header {
+        background: var(--dark-color);
+        height: 50px;
+        padding: 14px;
+        @extend %flexCenter;
+    }
+    &__title {
+        color: var(--white);
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: inline-block;
+    }
+    &__close {
+        width: 40px;
+        filter: var(--filter-white);
+        cursor: pointer;
+    }
     @include abstraction.screen(lg) {
         position: fixed;
         background: var(--white);
@@ -151,6 +170,9 @@
             visibility: visible;
             opacity: 1;
         }
+    }
+    @include abstraction.screen(md) {
+        right: 38%;
     }
 
     &__overlay {
@@ -174,7 +196,7 @@
     }
     &__item {
         &:hover .submenu {
-            visibility: visible;
+            display: block;
         }
         @include abstraction.screen(lg) {
             width: 100%;
@@ -219,14 +241,18 @@
     &__icon {
         width: 27px;
     }
+    &__quantity {
+        font-weight: 500;
+        @include abstraction.screen(sm) {
+            display: none;
+        }
+    }
 }
 .header-bottom {
     background: var(--primary-color);
 
     &__inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @extend %flexCenter;
         padding: 16px 0;
     }
 }
@@ -274,6 +300,9 @@
     gap: 12px;
     width: 300px;
     justify-content: flex-end;
+    @include abstraction.screen(md) {
+        display: none;
+    }
     &__phone {
         width: 30px;
         filter: var(--filter-phone-icon);
@@ -291,4 +320,25 @@
 .header__more {
     width: 30px;
     filter: var(--filter-submit-header);
+}
+.navbar-tablist {
+    @extend %flexCenter;
+    position: relative;
+    padding: 12px;
+    &__line {
+        position: absolute;
+        left: 0;
+        bottom: 8px;
+        width: 0;
+        height: 6px;
+        border-radius: 15px;
+        background-color: #c23564;
+        transition: all 0.2s ease;
+    }
+}
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
 }
