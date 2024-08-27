@@ -42,6 +42,9 @@
 
         const tabActive = document.querySelector(".navbar-tablist__item.active");
         const line = document.querySelector(".navbar-tablist__line");
+
+        const navPc = document.querySelector("#navbar__list--pc");
+        const navMobile = document.querySelector("#navbar__list--mobile");
         requestIdleCallback(function () {
             line.style.left = tabActive.offsetLeft + "px";
             line.style.width = tabActive.offsetWidth + "px";
@@ -55,11 +58,15 @@
                 document.querySelector(".tab-pane.active").classList.remove("active");
 
                 line.style.left = this.offsetLeft + "px";
-                line.style.width = this.offsetWidth   + "px";
+                line.style.width = this.offsetWidth + "px";
 
                 this.classList.add("active");
                 pane.classList.add("active");
             };
         });
+
+        console.log(navPc);
+        console.log(navMobile);
+        navMobile.innerHTML = navPc.innerHTML;
     </script>
 </html>

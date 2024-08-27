@@ -53,14 +53,14 @@
         </div>
         <!-- Navbar -->
         <div id="navbar" class="navbar show">
-            <ul class="navbar__list d-lg-none">
+            <ul id="navbar__list--pc" class="navbar__list d-lg-none">
                 <li class="navbar__item">
                     <a href="" class="navbar__link navbar__link--active">home </a>
                 </li>
                 <li class="navbar__item">
                     <a href="" class="navbar__link">
                         shop
-                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
+                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down navbar__arrow" />
                     </a>
                     <!-- Submenu 1 -->
                     <div class="submenu">
@@ -126,7 +126,8 @@
                 <li class="navbar__item">
                     <a href="" class="navbar__link"
                         >fast food
-                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
+                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down navbar__arrow" />
+                        <span class="cat-lable cat-lable--new"></span>
                     </a>
                     <!-- Submenu 2 -->
                     <div class="submenu">
@@ -191,11 +192,13 @@
                 </li>
                 <li class="navbar__item">
                     <a href="" class="navbar__link">brand </a>
+                    <span class="cat-lable cat-lable--hot"></span>
+
                 </li>
                 <li class="navbar__item">
                     <a href="" class="navbar__link"
                         >pages
-                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
+                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down navbar__arrow" />
                     </a>
                 </li>
                 <li class="navbar__item">
@@ -224,158 +227,8 @@
             </div>
             <!-- Tabcontetn -->
             <div class="tab-content d-none d-lg-block">
-                <ul class="tab-pane active navbar__list">
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link navbar__link--active">home </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link">
-                            shop
-                            <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
-                        </a>
-                        <!-- Submenu 1 -->
-                        <div class="submenu">
-                            <div class="submenu__row">
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">The Eugene Supreme</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">The Eugene Supreme</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">The Eugene Supreme</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="submenu__img">
-                                <img src="./assets/img/imgsubmenu1.jpg" alt="" class="submenu__img-item d-lg-none" />
-                                <img src="./assets/img/imgsubmenu1.jpg" alt="" class="submenu__img-item d-lg-none" />
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link"
-                            >fast food
-                            <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
-                        </a>
-                        <!-- Submenu 2 -->
-                        <div class="submenu">
-                            <div class="submenu__row">
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">Burger</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Grilled Chicken</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">Sandwich</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="submenu__col">
-                                    <h3 class="submenu__title">The Eugene Supreme</h3>
-                                    <ul class="submenu__list">
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a href="" class="submenu__link">Vegetable food</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="submenu__img">
-                                <img src="../assets/img/img_menu_1_.jpg" alt="" class="submenu__img-item d-lg-none" />
-                                <img src="./assets/img/imgsubmenu1.jpg" alt="" class="submenu__img-item d-lg-none" />
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link">brand </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link"
-                            >pages
-                            <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link">blog </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="" class="navbar__link">contact us </a>
-                    </li>
-                </ul>
+                <ul id="navbar__list--mobile" class="tab-pane active"></ul>
+
                 <div class="tab-pane header-authen">
                     <ul class="header-authen__list">
                         <li class="header-authen__item">
@@ -389,13 +242,17 @@
                 <div class="tab-pane header-options">
                     <div class="header-options__item">
                         <p class="currency-text">USD</p>
-                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
+                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down header-options__arrow" />
                         <div class="more-currency">EUR</div>
                     </div>
                     <div class="header-options__item">
                         <img src="./assets/img/icons8-usa-30.png" alt="" class="flag" />
                         <p class="countruy">USA</p>
-                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down" />
+                        <img src="./assets/icon/arrow-down.svg" alt="" class="arrow-down header-options__arrow" />
+                        <div class="more-country">
+                            <img src="./assets/img/icons8-vietnam-48.png" alt="" class="flag" />
+                            <p class="countruy">Vie</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,7 +265,7 @@
             </div>
             <div class="header-cart__group">
                 <img src="./assets/icon/cart.png" alt="" class="header-cart__icon" />
-                <p>Cart:0</p>
+                <p class="header-cart__quantity">Cart:0</p>
             </div>
         </div>
     </div>
