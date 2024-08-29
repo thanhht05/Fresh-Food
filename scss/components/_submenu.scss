@@ -12,7 +12,7 @@
     height: calc(100vh - 40px);
     z-index: 1;
     @include abstraction.screen(lg) {
-        top: 118px;
+        top: 0;
         width: 100%;
     }
 

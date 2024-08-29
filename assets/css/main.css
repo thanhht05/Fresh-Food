@@ -1239,7 +1239,7 @@ a {
 }
 @media (max-width: 991.98px) {
   .submenu {
-    top: 118px;
+    top: 0;
     width: 100%;
   }
 }
@@ -1292,6 +1292,26 @@ a {
 .submenu__img-item {
   width: 290px;
   object-fit: cover;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  min-width: 180px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+.btn--primary {
+  background: var(--primary-color);
+  color: var(--white);
+}
+.btn--normal {
+  background: var(--white);
+  border: 1px solid #ccc;
 }
 
 .navbar-tablist, .header-bottom__inner, .navbar__header, .header-center, .header-top {
@@ -1544,6 +1564,11 @@ a {
   top: 15px;
   background: transparent;
 }
+@media (max-width: 991.98px) {
+  .navbar__item::before {
+    content: none;
+  }
+}
 .navbar__link {
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -1581,6 +1606,11 @@ a {
 @media (max-width: 991.98px) {
   .cat-lable::before {
     top: -35px;
+  }
+}
+@media (max-width: 767.98px) {
+  .cat-lable::before {
+    left: 60%;
   }
 }
 .cat-lable--new::before {
@@ -1720,6 +1750,84 @@ a {
 
 .tab-pane.active {
   display: block;
+}
+
+.auth {
+  margin-top: 30px;
+  padding: 20px;
+}
+.auth__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+@media (max-width: 767.98px) {
+  .auth__row {
+    flex-direction: column;
+  }
+}
+.auth__row .form {
+  width: 50%;
+}
+@media (max-width: 767.98px) {
+  .auth__row .form {
+    width: 100%;
+  }
+}
+
+.auth-form {
+  padding: 30px 18px;
+  border: 2px solid #ebebeb;
+}
+.auth-form__left {
+  width: 48%;
+}
+.auth-form__right {
+  width: 52%;
+}
+.auth-form__title {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.auth-form__subtitle {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  line-height: 126%;
+}
+.auth-form__group {
+  margin-top: 20px;
+}
+.auth-form__lable {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+.auth-form__input {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.auth-checked {
+  margin-top: 20px;
+}
+
+.auth-action {
+  margin-top: 20px;
+  display: flex;
+  gap: 25px;
+}
+@media (max-width: 991.98px) {
+  .auth-action {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+.auth-action__btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

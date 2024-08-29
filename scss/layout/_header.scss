@@ -241,6 +241,9 @@
             height: 50px;
             top: 15px;
             background:transparent;
+        @include abstraction.screen(lg) {
+            content: none;
+        }
         }
     }
 
@@ -281,6 +284,9 @@
         text-transform: uppercase;
         @include abstraction.screen(lg){
             top: -35px;
+        }
+        @include abstraction.screen(md){
+            left: 60%;
         }
     }
     &--new::before {

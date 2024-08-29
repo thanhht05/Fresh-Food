@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favivon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favivon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favivon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favivon/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+        <!-- Script -->
+        <script src="./assets/js/script.js"></script>
+        <title>Create new Custome</title>
+    </head>
+</html>
+<body>
+    <!-- Header -->
+    <header id="header" class="header"></header>
+    <script>
+        load("#header", "./templates/header.html");
+    </script>
+    <main>
+        <div class="auth">
+            <!-- form 1 -->
+            <div class="auth__row">
+                <form action="./index.html" class="form">
+                    <div class="auth-form">
+                        <h2 class="auth-form__title">Personal Information</h2>
+                        <div class="auth-form__group">
+                            <label class="auth-form__lable" for="first-name">First Name</label>
+                            <input id="first-name" type="text" class="auth-form__input"  />
+                        </div>
+                        <div class="auth-form__group">
+                            <label class="auth-form__lable" for="last-name">Last Name</label>
+                            <input id="last-name" type="text" class="auth-form__input"  />
+                        </div>
+                        <div class="auth-checked">
+                            <input type="checkbox" name="agree" id="agree" />
+                            <label for="agree">Sign Up for Newsletter</label>
+                        </div>
+                    </div>
+                </form>
+                <!-- form 2 -->
+                <form action="./index.html" class="form">
+                    <div class="auth-form">
+                        <h2 class="auth-form__title">Sign-in Information</h2>
+                        <div class="auth-form__group">
+                            <label class="auth-form__lable" for="email">Email</label>
+                            <input id="email" type="text" class="auth-form__input"  />
+                        </div>
+                        <div class="auth-form__group">
+                            <label class="auth-form__lable" for="Password">Password</label>
+                            <input id="Password" type="text" class="auth-form__input"  />
+                        </div>
+                        <div class="auth-form__group">
+                            <label class="auth-form__lable" for="Confirm Password">Confirm Password</label>
+                            <input id="Confirm Password" type="text" class="auth-form__input"  />
+                        </div>
+                        <div class="auth-checked">
+                            <input type="checkbox" name="signup" id="signup" />
+                            <label for="signup"
+                                >By using this form you agree with the storage and handling of your data by this website.</label
+                            >
+                        </div>
+                        <div class="auth-action">
+                            <button class="btn btn--primary auth-action__btn">Create an Account</button>
+                            <button class="btn btn--normal auth-action__btn">Back</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+    <script>
+        load("#footer", "./templates/footer.html");
+    </script>
+</body>
+<script>
+    const tabs = document.querySelectorAll(".navbar-tablist__item");
+    const panes = document.querySelectorAll(".tab-pane");
+
+    const tabActive = document.querySelector(".navbar-tablist__item.active");
+    const line = document.querySelector(".navbar-tablist__line");
+
+    const navPc = document.querySelector("#navbar__list--pc");
+    const navMobile = document.querySelector("#navbar__list--mobile");
+    requestIdleCallback(function () {
+        line.style.left = tabActive.offsetLeft + "px";
+        line.style.width = tabActive.offsetWidth + "px";
+    });
+
+    tabs.forEach((tab, index) => {
+        const pane = panes[index];
+
+        tab.onclick = function () {
+            document.querySelector(".navbar-tablist__item.active").classList.remove("active");
+            document.querySelector(".tab-pane.active").classList.remove("active");
+
+            line.style.left = this.offsetLeft + "px";
+            line.style.width = this.offsetWidth + "px";
+
+            this.classList.add("active");
+            pane.classList.add("active");
+        };
+    });
+    navMobile.innerHTML = navPc.innerHTML;
+</script>
+

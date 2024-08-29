@@ -1,0 +1,21 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+    min-width: 180px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1.7rem;
+
+    &--primary{
+        background: var(--primary-color);
+        color: var(--white);
+    }
+    &--normal{
+        background: var(--white);
+        border: 1px solid #ccc;
+    }
+}
