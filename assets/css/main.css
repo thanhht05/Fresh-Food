@@ -1386,7 +1386,6 @@ a {
 }
 
 .main-content {
-  background: orange;
   width: 73%;
   float: right;
 }
@@ -1458,6 +1457,114 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.slider__content {
+  position: relative;
+}
+.slider__img {
+  width: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  object-fit: cover;
+}
+.slider__img:hover ~ .slider__slick--next {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.slider__img:hover ~ .slider__slick--prve {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.slider__slick {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.slider__slick--prve {
+  left: -40px;
+}
+.slider__slick--next {
+  right: -40px;
+}
+.slider__slick--next, .slider__slick--prve {
+  opacity: 0;
+  visibility: hidden;
+}
+.slider__icon {
+  width: 30px;
+  height: 30px;
+  filter: var(--filter-white);
+}
+
+.slider-desc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+}
+.slider-desc__lable {
+  color: var(--primary-color);
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.slider-desc__title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 3.5rem;
+  line-height: 120%;
+}
+.slider-desc__subtitle {
+  margin-top: 14px;
+  font-size: 1.8rem;
+}
+.slider-desc__act {
+  margin-top: 20px;
+}
+.slider-desc__btn {
+  text-transform: uppercase;
+  transition: all 0.6s;
+}
+.slider-desc__btn:hover {
+  background: transparent;
+  color: var(--text-color);
+}
+
+.slider-aside__content {
+  position: relative;
+}
+.slider-aside__info {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  transform: translateY(-50%);
+}
+.slider-aside__lable {
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.slider-aside__title {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 120%;
+}
+.slider-aside__link {
+  margin-top: 12px;
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .navbar-tablist, .header-bottom__inner, .navbar__header, .header-center, .header-top {

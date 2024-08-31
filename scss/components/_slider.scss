@@ -1,0 +1,111 @@
+.slider {
+    &__content {
+        position: relative;
+    }
+    &__img {
+        width: 100%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        object-fit: cover;
+        &:hover ~ .slider__slick--next {
+            right: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+        &:hover ~ .slider__slick--prve {
+            left: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__slick {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45px;
+        height: 45px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        &--prve {
+            left: -40px;
+        }
+        &--next {
+            right: -40px;
+        }
+        &--next,
+        &--prve {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &__icon {
+        width: 30px;
+        height: 30px;
+        filter: var(--filter-white);
+    }
+}
+.slider-desc {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+
+    &__lable {
+        color: var(--primary-color);
+        font-size: 1.9rem;
+        font-weight: 500;
+    }
+    &__title {
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 3.5rem;
+        line-height: 120%;
+    }
+    &__subtitle {
+        margin-top: 14px;
+        font-size: 1.8rem;
+    }
+    &__act {
+        margin-top: 20px;
+    }
+    &__btn {
+        text-transform: uppercase;
+        transition: all 0.6s;
+        &:hover {
+            background: transparent;
+            color: var(--text-color);
+        }
+    }
+}
+.slider-aside {
+    &__content {
+        position: relative;
+    }
+    &__info {
+        position: absolute;
+        top: 50%;
+        left: 12%;
+        transform: translateY(-50%);
+    }
+    &__lable {
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__title {
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 120%;
+    }
+    &__link{
+        margin-top: 12px;
+        display: inline-block;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+}
