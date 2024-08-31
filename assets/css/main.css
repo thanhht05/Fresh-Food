@@ -54,6 +54,8 @@ table {
 
 *, ::before, ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -1312,6 +1314,150 @@ a {
 .btn--normal {
   background: var(--white);
   border: 1px solid #ccc;
+}
+
+.sidebar-menu__link, .sidebar-menu__item {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  width: 27%;
+  float: left;
+  padding: 0 15px;
+}
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .sidebar-menu__list {
+    display: none;
+  }
+}
+.sidebar-menu__item {
+  position: relative;
+  gap: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.sidebar-menu__item::after {
+  content: url(/assets/icon/arrow-right.svg);
+  position: absolute;
+  right: 0;
+  filter: #ccc;
+}
+.sidebar-menu__icon {
+  width: 20px;
+}
+
+.sidebar-product__content {
+  border: 1px solid red;
+  padding: 16px;
+}
+
+.sidebar-serivce {
+  margin-top: 20px;
+}
+.sidebar-serivce__row {
+  display: flex;
+  gap: 10px;
+}
+.sidebar-serivce__item {
+  border: 1px solid #d8d7d7;
+  padding: 20px 0;
+}
+.sidebar-serivce__title {
+  font-weight: 500;
+}
+.sidebar-serivce__subtitle {
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+.sidebar-serivce__icon {
+  width: 25px;
+  height: 25px;
+}
+
+.home-page {
+  margin-top: 20px;
+}
+
+.main-content {
+  background: orange;
+  width: 73%;
+  float: right;
+}
+@media (max-width: 991.98px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.product-row--center {
+  justify-content: center;
+}
+.product-card {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+.product-img {
+  width: 100%;
+}
+.product-name {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.product-review {
+  margin-top: 12px;
+}
+.product-price {
+  margin-top: 12px;
+}
+.product-sidebar {
+  margin-top: 20px;
+}
+
+.product-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+@media (max-width: 1199.98px) {
+  .product-tab {
+    margin-bottom: 20px;
+  }
+}
+.product-tab__title {
+  font-weight: 500;
+  font-size: 1.7rem;
+  position: relative;
+}
+.product-tab__title::before {
+  content: url(/assets/img/deal-img.png);
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-between;
+}
+.countdown .time-box {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-tablist, .header-bottom__inner, .navbar__header, .header-center, .header-top {

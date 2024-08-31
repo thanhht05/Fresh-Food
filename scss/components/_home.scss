@@ -1,0 +1,12 @@
+@use "../abstraction";
+.home-page{
+    margin-top: 20px;
+}
+.main-content{
+    background: orange;
+    width: 73%;
+    float: right;
+    @include abstraction.screen(lg) {
+        width: 100%;
+    }
+}

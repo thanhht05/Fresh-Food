@@ -1,0 +1,67 @@
+@use "../abstraction";
+%flex {
+    display: flex;
+    align-items: center;
+}
+.sidebar {
+    width: 27%;
+    float: left;
+    padding: 0 15px;
+    @include abstraction.screen(lg) {
+        display: none;
+    }
+}
+.sidebar-menu {
+    &__list {
+        @include abstraction.screen(xl) {
+            display: none;
+        }
+    }
+    &__item {
+        position: relative;
+        @extend %flex;
+        gap: 10px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        &::after {
+            content: url(/assets/icon/arrow-right.svg);
+            position: absolute;
+            right: 0;
+            filter: #ccc;
+        }
+    }
+    &__link {
+        @extend %flex;
+    }
+    &__icon {
+        width: 20px;
+    }
+}
+.sidebar-product {
+    &__content {
+        border: 1px solid red;
+        padding: 16px;
+    }
+}
+.sidebar-serivce {
+    margin-top: 20px;
+    &__row {
+        display: flex;
+        gap: 10px;
+    }
+    &__item {
+        border: 1px solid #d8d7d7;
+        padding: 20px 0;
+    }
+    &__title {
+        font-weight: 500;
+    }
+    &__subtitle {
+        margin-top: 8px;
+        font-size: 1.4rem;
+    }
+    &__icon {
+        width: 25px;
+        height: 25px;
+    }
+}

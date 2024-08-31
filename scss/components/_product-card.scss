@@ -1,0 +1,52 @@
+@use "../abstraction";
+
+.product {
+    &-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &--center{
+            justify-content: center;
+        }
+    }
+    &-card{
+        border: 1px solid #eee;
+        padding: 10px;
+    }
+    &-img {
+        width: 100%;
+    }
+
+    &-name {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    &-review{
+        margin-top: 12px;
+    }
+    &-price{
+        margin-top: 12px;
+    }
+    &-sidebar{
+        margin-top: 20px;
+    }
+}
+.product-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    @include abstraction.screen(xl) {
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 1.7rem;
+        position: relative;
+        &::before {
+            content: url(/assets/img/deal-img.png);
+        }
+    }
+}
