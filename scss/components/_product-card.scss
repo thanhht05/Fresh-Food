@@ -1,35 +1,16 @@
 @use "../abstraction";
-
+%flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .product {
-    &-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        &--center{
-            justify-content: center;
-        }
-    }
-    &-card{
-        border: 1px solid #eee;
+    &-card {
+        border: 1px solid #c1c0c0;
         padding: 10px;
     }
-    &-img {
-        width: 100%;
-    }
 
-    &-name {
-        margin-top: 10px;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-    &-review{
-        margin-top: 12px;
-    }
-    &-price{
-        margin-top: 12px;
-    }
-    &-sidebar{
+    &-sidebar {
         margin-top: 20px;
     }
 }
@@ -47,6 +28,125 @@
         position: relative;
         &::before {
             content: url(/assets/img/deal-img.png);
+        }
+    }
+    &__switch {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        display: inline-block;
+        padding: 6px 10px;
+        font-weight: 500;
+        font-size: 1.5rem;
+        &--active {
+            color: var(--primary-color);
+        }
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}
+.product-card {
+    position: relative;
+    &__img {
+        width: 100%;
+        transition: scale 0.5s;
+        &:hover {
+            scale: 1.1;
+        }
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include abstraction.screen(sm){
+            flex-direction: column;
+        }
+        &--center {
+            justify-content: center;
+        }
+    }
+    &__detail {
+        margin-top: 20px;
+    }
+    &__name {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 500;
+    }
+    &__price-wrapper {
+        margin-top: 8px;
+    }
+    &__price {
+        font-weight: 500;
+        font-size: 1.5rem;
+        &--old {
+            text-decoration: line-through;
+            color: var(--old-price);
+        }
+    }
+    &__review {
+        margin-top: 8px;
+    }
+    &__lable {
+        position: absolute;
+        top: 14px;
+        width: 60px;
+        height: 20px;
+        @extend %flexCenter;
+        color: var(--white);
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.5rem;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        &--new {
+            background: #5eac12;
+        }
+        &--discount {
+            background: #dd433f;
+        }
+    }
+    &:hover .product-option {
+        opacity: 1;
+        visibility: visible;
+        bottom: 0px;
+    }
+}
+.product-option {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+
+    &__list {
+        display: flex;
+        gap: 13px;
+    }
+    &__item {
+        width: 40px;
+        height: 40px;
+        background: #eee;
+        border-radius: 50%;
+        @extend %flexCenter;
+        &:hover,
+        &--active {
+            background: var(--primary-color);
+        }
+
+        &--active .product-option__icon {
+            filter: var(--filter-white);
+        }
+    }
+    &__icon {
+        width: 35px;
+        border-radius: 50%;
+        &:hover {
+            filter: var(--filter-white);
         }
     }
 }

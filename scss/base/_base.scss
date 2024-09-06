@@ -1,22 +1,29 @@
-*, ::before,::after{
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-html{
+html,
+body {
+    overflow-x: hidden;
+}
+html {
     font-size: 62.5%;
     font-family: "Poppins", sans-serif;
 }
-body{
+body {
     font-size: 1.6rem;
     color: var(--text-color);
 }
-button ,input{
+button,
+input {
     outline: none;
     border: none;
     background: transparent;
 }
-a{
+a {
     text-decoration: none;
     color: inherit;
 }

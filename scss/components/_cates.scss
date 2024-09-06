@@ -1,0 +1,14 @@
+@use "../abstraction";
+.cate-item {
+    @include abstraction.screen(md) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__img {
+        width: 100%;
+        @include abstraction.screen(md) {
+            width: 150px;
+        }
+    }
+}

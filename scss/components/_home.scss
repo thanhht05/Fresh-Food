@@ -1,11 +1,67 @@
 @use "../abstraction";
 .home-page {
     margin-top: 20px;
+    display: flex;
 }
 .main-content {
-    width: 73%;
-    float: right;
+    flex: 1;
     @include abstraction.screen(lg) {
         width: 100%;
+    }
+}
+.home-banner {
+    margin-top: 50px;
+    &__group {
+        position: relative;
+    }
+    &__img {
+        width: 100%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+    }
+    &__lable {
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__title {
+        margin-top: 8px;
+        font-size: 1.8rem;
+        line-height: 120%;
+        strong {
+            font-weight: 600;
+            font-size: 2rem;
+        }
+    }
+    &__link {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: underline;
+    }
+}
+.home-filter {
+    margin: 30px 0;
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    &__item {
+        border: 1px solid #cfcece;
+        padding: 8px;
+        font-weight: 500;
+        font-size: 1.5rem;
+        transition: all 0.5s;
+        cursor: pointer;
+    }
+    &__item.active {
+        background: var(--primary-color);
+        color: var(--white);
+        border-color: var(--primary-color);
     }
 }
