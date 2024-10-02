@@ -1,15 +1,16 @@
-:root{
+:root {
     --text-color: #222222;
     --white: #fff;
     --primary-color: #f05127;
-    --color-place:#888;
+    --color-place: #888;
     --dark-color: #000;
     --old-price: #888888;
-    --filter-icon   :  brightness(0) saturate(100%) invert(45%) sepia(56%) saturate(4720%) hue-rotate(347deg) brightness(97%) contrast(94%);
+    --filter-icon: brightness(0) saturate(100%) invert(45%) sepia(56%) saturate(4720%) hue-rotate(347deg) brightness(97%) contrast(94%);
     --filter-icon-bar: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(347deg) brightness(102%) contrast(100%);
     --filter-submit-header: brightness(0) saturate(100%) invert(62%) sepia(3%) saturate(8%) hue-rotate(327deg) brightness(93%) contrast(77%);
-    --filter-phone-icon: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(347deg) brightness(102%) contrast(100%);
+    --filter-phone-icon: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(347deg) brightness(102%)
+        contrast(100%);
     --filter-white: brightness(0) saturate(100%) invert(100%) sepia(20%) saturate(0%) hue-rotate(256deg) brightness(114%) contrast(100%);
-    --boxshadow:  rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+    --boxshadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --bg-footer: #f9f0df;
 }

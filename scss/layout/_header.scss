@@ -7,9 +7,6 @@
 .header-top {
     padding: 10px 0;
     @extend %flexCenter;
-    // @include abstraction.screen(lg) {
-    //     display: none;
-    // }
     &__icon {
         width: 30px;
         margin-right: 10px;
